@@ -1,12 +1,12 @@
 #import('dart:html');
 #import('dart:json');
-#import('EncodeDecode.dart');
+#source('ParseTweet.dart');
 
 dataReceived(MessageEvent e) {
   Map<String, String> parsedData=JSON.parse(e.data);
   List<Map<String, String>> tweets=parsedData['results'];
-  tweets.forEach((item){print(item['created_at']);});
-  
+  ParseTweet output=new ParseTweet(tweets);
+  document.query('.one').innerHTML=output.toString();
 }
 // print the raw json response text from the server
 getTweet(){
@@ -20,7 +20,7 @@ getTweet(){
 }
 
 void main() {
-  getTweet();  
+  getTweet();
   document.on.keyDown.add(rotateHandler(event){var xAngle = 0, yAngle = 0;
   switch(event.keyCode)
   {

@@ -11,12 +11,14 @@
       -webkit-transform-style: preserve-3d;
 }
 .face {
+	  overflow: hidden;
       position: absolute;
       height: 360px;
       width: 360px;
       padding: 20px;
-      background-color: rgba(50, 50, 50, 0.7);
+      background-color: rgba(50, 50, 150, 0.6);
 }
+
 #cube .one  
 {
       -webkit-transform: rotateX(90deg) translateZ(200px);
@@ -42,3 +44,5 @@
 #cube .six {
       -webkit-transform: rotateX(-90deg) translateZ(200px) rotate(180deg);
 }
+
+div
